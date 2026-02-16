@@ -35,7 +35,7 @@ export class HackerNewsConnector extends BaseConnector {
     try {
       // Get story IDs
       const idsResponse = await fetch(`${this.apiBase}/${feed}stories.json`);
-      const ids: number[] = await idsResponse.json();
+      const ids = await idsResponse.json() as number[];
 
       // Fetch items in parallel (limited batch)
       const itemPromises = ids.slice(0, maxItems).map(id => this.fetchItem(id));
@@ -61,7 +61,7 @@ export class HackerNewsConnector extends BaseConnector {
   private async fetchItem(id: number): Promise<HNItem | null> {
     try {
       const response = await fetch(`${this.apiBase}/item/${id}.json`);
-      return await response.json();
+      return await response.json() as HNItem;
     } catch {
       return null;
     }

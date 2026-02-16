@@ -48,6 +48,7 @@ export class ContentService {
     return items.map(item => ({
       ...item,
       timestamp: new Date(item.timestamp),
+      type: item.type as ContentItem['type'],
       meta: item.meta as Record<string, any>,
     }));
   }
@@ -69,6 +70,7 @@ export class ContentService {
     return items.map(item => ({
       ...item,
       timestamp: new Date(item.timestamp),
+      type: item.type as ContentItem['type'],
       meta: item.meta as Record<string, any>,
     }));
   }
@@ -86,6 +88,7 @@ export class ContentService {
     return items.map(item => ({
       ...item,
       timestamp: new Date(item.timestamp),
+      type: item.type as ContentItem['type'],
       meta: item.meta as Record<string, any>,
     }));
   }

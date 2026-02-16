@@ -45,7 +45,7 @@ export class RedditConnector extends BaseConnector {
         }
       });
 
-      const data = await response.json();
+      const data = await response.json() as any;
       const posts: RedditPost[] = data.data.children;
 
       const items: ContentItem[] = posts
