@@ -17,8 +17,8 @@
   "dependencies": {
     "@feed-platform/core": "*",
     "@feed-platform/connectors": "*",
-    "fastify": "^4.26.0",
-    "@fastify/cors": "^8.5.0",
+    "fastify": "^5.7.2",
+    "@fastify/cors": "^9.0.0",
     "drizzle-orm": "^0.29.0",
     "postgres": "^3.4.3",
     "dotenv": "^16.3.1"
