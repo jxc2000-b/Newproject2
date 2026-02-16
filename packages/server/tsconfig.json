@@ -6,9 +6,5 @@
     "moduleResolution": "node"
   },
   "include": ["src/**/*"],
-  "exclude": ["node_modules", "dist"],
-  "references": [
-    { "path": "../core" },
-    { "path": "../connectors" }
-  ]
+  "exclude": ["node_modules", "dist"]
 }
