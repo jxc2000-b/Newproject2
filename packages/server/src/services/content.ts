@@ -1,7 +1,7 @@
 import { db } from '../db/index.js';
 import { contentItems } from '../db/schema.js';
 import type { ContentItem } from '@feed-platform/core';
-import { eq, desc, and, gte } from 'drizzle-orm';
+import { eq, desc, and, gte, lt } from 'drizzle-orm';
 
 /**
  * Content service - manages content items
@@ -99,7 +99,7 @@ export class ContentService {
   async deleteOlderThan(date: Date): Promise<number> {
     const result = await db
       .delete(contentItems)
-      .where(gte(contentItems.timestamp, date));
+      .where(lt(contentItems.timestamp, date));
 
     return 0; // PostgreSQL doesn't return affected rows easily
   }

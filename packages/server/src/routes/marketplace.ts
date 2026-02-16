@@ -2,6 +2,7 @@ import type { FastifyInstance } from 'fastify';
 import { db } from '../db/index.js';
 import { marketplaceAlgorithms } from '../db/schema.js';
 import type { AlgorithmConfig } from '@feed-platform/core';
+import { eq } from 'drizzle-orm';
 
 export async function marketplaceRoutes(fastify: FastifyInstance) {
   // Get all marketplace algorithms
@@ -33,7 +34,7 @@ export async function marketplaceRoutes(fastify: FastifyInstance) {
       const items = await db
         .select()
         .from(marketplaceAlgorithms)
-        .where((marketplaceAlgorithms as any).id.eq(id))
+        .where(eq(marketplaceAlgorithms.id, id))
         .limit(1);
 
       if (items.length === 0) {
@@ -66,7 +67,7 @@ export async function marketplaceRoutes(fastify: FastifyInstance) {
       const items = await db
         .select()
         .from(marketplaceAlgorithms)
-        .where((marketplaceAlgorithms as any).id.eq(id))
+        .where(eq(marketplaceAlgorithms.id, id))
         .limit(1);
 
       if (items.length === 0) {
