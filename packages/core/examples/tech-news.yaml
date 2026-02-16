@@ -1,0 +1,46 @@
+version: "0.1.0"
+name: "Tech News Feed"
+description: "Curated feed of technology news with recency boost"
+author: "Platform Team"
+tags:
+  - tech
+  - news
+
+filters:
+  - type: keyword
+    mode: include
+    values:
+      - tech
+      - programming
+      - software
+      - AI
+      - startup
+
+  - type: contentType
+    mode: include
+    values:
+      - article
+
+  - type: age
+    mode: include
+    values: []
+    maxAge: 86400  # 24 hours
+
+boosters:
+  - type: recency
+    weight: 2.0
+
+  - type: engagement
+    weight: 1.5
+
+diversity:
+  maxPerSource: 3
+  mixContentTypes: false
+
+sort:
+  type: score
+  direction: desc
+
+limit:
+  maxItems: 50
+  offset: 0

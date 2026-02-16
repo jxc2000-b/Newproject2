@@ -1,0 +1,15 @@
+version: "0.1.0"
+name: "Chronological All"
+description: "Simple chronological feed of all content"
+author: "Platform Team"
+tags:
+  - chronological
+  - all
+
+sort:
+  type: chronological
+  direction: desc
+
+limit:
+  maxItems: 100
+  offset: 0
