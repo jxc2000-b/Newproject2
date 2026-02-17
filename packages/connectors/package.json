@@ -1,0 +1,42 @@
+{
+  "name": "@feed-platform/connectors",
+  "version": "0.1.0",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./rss": {
+      "types": "./dist/rss/index.d.ts",
+      "default": "./dist/rss/index.js"
+    },
+    "./hackernews": {
+      "types": "./dist/hackernews/index.d.ts",
+      "default": "./dist/hackernews/index.js"
+    },
+    "./reddit": {
+      "types": "./dist/reddit/index.d.ts",
+      "default": "./dist/reddit/index.js"
+    },
+    "./webhook": {
+      "types": "./dist/webhook/index.d.ts",
+      "default": "./dist/webhook/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "clean": "rm -rf dist",
+    "dev": "tsc --watch"
+  },
+  "dependencies": {
+    "@feed-platform/core": "*",
+    "rss-parser": "^3.13.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "typescript": "^5.3.3"
+  }
+}
