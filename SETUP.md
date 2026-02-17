@@ -163,6 +163,7 @@ npm run build
 ### Port Already in Use
 
 Change ports in:
+
 - Server: `packages/server/.env` (PORT)
 - Web: `packages/web/vite.config.ts` (server.port)
 
@@ -179,6 +180,7 @@ Add a source with type `hackernews` and fetch top stories.
 ### 3. Reddit Connector
 
 Add a source:
+
 - Type: `reddit`
 - Config: `{"subreddit": "programming", "sort": "hot", "maxItems": 25}`
 
